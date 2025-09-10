@@ -280,7 +280,10 @@ footer {
         font-size: 2rem;
     }
     .profile-img {
-        width: 160px;
+        width: 200px;
         height: 160px;
+        border-radius:50%;
+        object-fit:cover;
+        transition:transform 0.25 ease-in-out;
     }
 }
