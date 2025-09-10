@@ -1,0 +1,281 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b0b0e;
+    color: #e9eaec;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: saturate(120%) blur(6px);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+header.scrolled {
+    background: rgba(10,10,12,0.92);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    position: relative;
+    color: #e9eaec;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 14px 6px;
+    display: inline-block;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 0;
+    height: 2px;
+    background: #f6c10a;
+    transition: width 0.25s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 100px 20px 60px 20px;
+    background:
+        linear-gradient(180deg, rgba(11,11,14,0.85) 0%, rgba(11,11,14,0.75) 60%, rgba(11,11,14,0.9) 100%),
+        url('images/iTrackLive.jpeg') center/cover no-repeat;
+    color: #f2f3f5;
+    min-height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+/* Round profile image on About section */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f6c10a;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    margin-bottom: 12px;
+}
+
+/* Reusable page hero for inner pages */
+.page-hero {
+    min-height: 48vh;
+    padding: 80px 20px 50px 20px;
+    background:
+        linear-gradient(180deg, rgba(11,11,14,0.85) 0%, rgba(11,11,14,0.75) 60%, rgba(11,11,14,0.9) 100%),
+        url('images/iTrackLive.jpeg') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page-hero h1 {
+    color: #f2f3f5;
+    font-size: 2.2rem;
+}
+
+/* Section Headings */
+section h2 {
+    text-align: center;
+    margin: 48px 0 22px 0;
+    font-size: 2rem;
+    color: #f6c10a;
+}
+
+/* Section heading prefix inspired by tamalsen.dev */
+section h2::before {
+    content: "// ";
+    color: #8b8d93;
+}
+
+/* About Me */
+#about {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #131419;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* Projects */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 0 40px 0;
+}
+
+.project-card {
+    background: #15161a;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+
+.project-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: #f6c10a;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0b0b0e;
+    background: #f6c10a;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.project-card a:hover {
+    background: #ffd84d;
+    transform: translateY(-1px);
+}
+
+/* Certificates */
+#certificates ul {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #131419;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    list-style: disc inside;
+}
+
+#certificates li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #e9eaec;
+}
+
+/* Contact */
+#contact {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    background: #131419;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    text-align: center;
+}
+
+#contact a {
+    color: #f6c10a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #0a0a0c;
+    color: #e9eaec;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-top: 2px solid #f6c10a;
+}
+
+/* Back to top button */
+#backToTop {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    background: #f6c10a;
+    color: #0b0b0e;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+}
+
+#backToTop:hover {
+    background: #ffd84d;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #about, #certificates ul, #contact {
+        max-width: 95%;
+    }
+    #hero h1 {
+        font-size: 2rem;
+    }
+}
